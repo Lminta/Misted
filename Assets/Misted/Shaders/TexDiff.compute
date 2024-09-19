@@ -1,0 +1,14 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel TexDiff
+
+int2     _TexMaskSize;
+Texture2D<float4> _TexMask;
+Texture2D<float4> _TexActual;
+RWStructuredBuffer<int> _Output;
+
+
+[numthreads(8,8,1)]
+void TexDiff (uint3 id : SV_DispatchThreadID)
+{
+    _Output[id.y * _TexMaskSize.x + id.x] = _TexMask[id.xy].r * _TexActual[id.xy].a;
+}
