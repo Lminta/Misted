@@ -12,7 +12,7 @@ namespace Minigames.Misted
         MistedWindow _prefab;
         MistedWindow _instance;
 
-        public void Open()
+        void Start()
         {
             _instance = Instantiate(_prefab, _parent);
             _instance.Setup(this);
@@ -24,6 +24,8 @@ namespace Minigames.Misted
             {
                 Destroy(_instance.gameObject);
             });
+            
+            Application.Quit();
         }
     }
 }

@@ -35,11 +35,11 @@ namespace Minigames.Misted.Userinterface
             {
                 _photoButton.rectTransform.anchoredPosition = Vector2.up * START_PHOTO_POS;
                 _photoButton.rectTransform.sizeDelta = Vector2.one * INITIAL_SIZE_PHOTO_BUTTON;
-                //UIGameColors.SetTransparent(_exitButton);
-                _exitButton.color = Color.clear;
+
+                _exitButton.color = Color.white;
                 _exitButton.transform.localScale = Vector3.one * INITIAL_SCALE_CANCEL_BUTTON;
-                //UIGameColors.SetTransparent(_backButton);
-                _exitButton.color = Color.clear;
+
+                _exitButton.color = Color.white;
                 _backButton.transform.localScale = Vector3.one * INITIAL_SCALE_CANCEL_BUTTON;
 
                 _animation.SetEase(Ease.OutSine);
@@ -70,11 +70,11 @@ namespace Minigames.Misted.Userinterface
                     animFinalAction?.Invoke();
                     _photoButton.rectTransform.anchoredPosition = Vector2.up * _defaultSize;
                     _photoButton.rectTransform.sizeDelta = Vector2.one * _defaultPos;
-                    //UIGameColors.SetTransparent(_exitButton, 1f);
-                    _exitButton.color = Color.black;
+
+                    _exitButton.color = Color.clear;
                     _exitButton.transform.localScale = Vector3.one;
-                    //UIGameColors.SetTransparent(_backButton, 1f);
-                    _exitButton.color = Color.black;
+
+                    _exitButton.color = Color.clear;
                     _backButton.transform.localScale = Vector3.one;
                 });
             }
@@ -88,8 +88,8 @@ namespace Minigames.Misted.Userinterface
                 
             if (show)
             {
-                //UIGameColors.SetTransparent(_backButton);
-                _backButton.color = Color.clear;
+
+                _backButton.color = Color.white;
                 _backButton.transform.localScale = Vector3.one * INITIAL_SCALE_CANCEL_BUTTON;
 
                 _backAnimation.SetEase(Ease.OutSine);
@@ -112,8 +112,8 @@ namespace Minigames.Misted.Userinterface
                 {
                     _backAnimation = null;
                     animFinalAction?.Invoke();
-                    //UIGameColors.SetTransparent(_backButton, 1f);
-                    _backButton.color = Color.black;
+        
+                    _backButton.color = Color.clear;
                     _backButton.transform.localScale = Vector3.one;
                 });
             }
